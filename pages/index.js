@@ -1,26 +1,29 @@
 import {filmes} from "../data/filmes.js"
 function Home () {
-    console.log(filmes)
-
- const primeiroFilme = filmes[0]
+   
 const estiloImagem ={width: "300px"};
 return <>
 <h1>filmes </h1>
 
 <ul>
+    { 
+    filmes.map((filme)=>{
+        return(
+            <li key={`card-filme-${filme.id} `}>   
+
+                <p>nome do filme:</p>
+
+                <p> titulo: {filme.titulo }</p>
+                <p>ano:{filme.ano}</p>
+                <p>genero:{filme.genero}</p>
+                <p>nota{filme.nota}</p>
+
+                <img style={estiloImagem} src ={filme.poster}/>
+
+            </li>
     
-    <li>
-
- <p>nome do filme:</p>
-
- <p> titulo: {primeiroFilme.titulo }</p>
- <p>ano:{primeiroFilme.ano}</p>
- <p>genero:{primeiroFilme.genero}</p>
- <p>nota{primeiroFilme.nota}</p>
-
- <img style={estiloImagem} src ={primeiroFilme.poster}/>
-
-    </li>
+        );
+    })}
     
 </ul>
 
