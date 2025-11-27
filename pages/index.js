@@ -1,5 +1,7 @@
+"use client"
 import {filmes} from "../data/filmes.js"
 import CardFilme from '../components/CardFilme';
+
 
 function Home () {
    const estiloListaCards = {
@@ -8,6 +10,9 @@ function Home () {
         gap: '16px',
         listStyle: 'none'
    }
+
+   const urlVamosChamar=
+   ('https://api.themoviedb.org/3/movie/popular?ar?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY')
 
 return <>
 
